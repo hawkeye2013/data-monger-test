@@ -1,0 +1,20 @@
+{
+  "name": "data-monger-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm link ../data-monger && node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "mongodb": "^3.6.3",
+    "mysql": "^2.18.1",
+    "pg": "^8.5.1"
+  }
+}
