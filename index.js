@@ -15,7 +15,13 @@ let db = new DataMonger({
 
 db.collection('employees')
   .findOne({
-    EmployeeId: 1,
+    query: [
+      {
+        name: 'EmployeeId',
+        operator: '==',
+        value: '1',
+      },
+    ],
   })
   .then((data) => {
     console.log(data);
@@ -26,7 +32,13 @@ db.collection('employees')
 
 db.collection('employees')
   .find({
-    Title: 'Sales Support Agent',
+    query: [
+      {
+        name: 'Title',
+        operator: '==',
+        value: 'Sales Support Agent',
+      },
+    ],
   })
   .then((data) => {
     console.log(data);
