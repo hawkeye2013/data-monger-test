@@ -13,36 +13,49 @@ let db = new DataMonger({
   },
 });
 
-db.collection('employees')
-  .findOne({
-    query: [
-      {
-        name: 'EmployeeId',
-        operator: '==',
-        value: '1',
-      },
-    ],
-  })
+db.getSchema()
   .then((data) => {
     console.log(data);
   })
-  .catch((err) => {
-    console.log(err);
-  });
+  .catch((err) => console.log(err));
 
 db.collection('employees')
-  .find({
-    query: [
-      {
-        name: 'Title',
-        operator: '==',
-        value: 'Sales Support Agent',
-      },
-    ],
-  })
+  .getSchema()
   .then((data) => {
     console.log(data);
   })
-  .catch((err) => {
-    console.log(err);
-  });
+  .catch((err) => console.log(err));
+
+// db.collection('employees')
+//   .findOne({
+//     query: [
+//       {
+//         name: 'EmployeeId',
+//         operator: '==',
+//         value: '1',
+//       },
+//     ],
+//   })
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+// db.table('employees')
+//   .find({
+//     query: [
+//       {
+//         name: 'Title',
+//         operator: '==',
+//         value: 'Sales Support Agent',
+//       },
+//     ],
+//   })
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
